@@ -1,23 +1,17 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Mulish } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const mulish = Mulish({
+  subsets: ["latin-ext"],
 });
 
 export const metadata: Metadata = {
   title: "Finance AI | Plataforma de Gestão Financeira",
-  description: "A Finance AI é uma plataforma de gestão financeira que utiliza IA para monitorar suas movimentações, e oferecer insights personalizados, facilitando o controle do seu orçamento.",
+  description:
+    "A Finance AI é uma plataforma de gestão financeira que utiliza IA para monitorar suas movimentações, e oferecer insights personalizados, facilitando o controle do seu orçamento.",
 };
 
 export default function RootLayout({
@@ -27,14 +21,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <ClerkProvider appearance={{
-        baseTheme: dark
-      }}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
+      <ClerkProvider
+        appearance={{
+          baseTheme: dark,
+        }}
       >
-        {children}
-      </body>
+        <body className={`${mulish.className} dark antialiased`}>
+          {children}
+        </body>
       </ClerkProvider>
     </html>
   );
