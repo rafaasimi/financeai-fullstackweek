@@ -1,4 +1,4 @@
-export default function Page() {
+export default function SubscriptionPage() {
   return (
     <h1>Transações</h1>
   )
