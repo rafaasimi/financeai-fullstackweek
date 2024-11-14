@@ -7,7 +7,7 @@ import {
 export const TRANSACTION_TYPE_LABELS = {
   EXPENSE: "Despesa",
   DEPOSIT: "Depósito",
-  INVESTIMENT: "Investimento",
+  INVESTMENT: "Investimento",
 };
 
 export const TRANSACTION_CATEGORY_LABELS = {
@@ -42,12 +42,12 @@ export const TRANSACTION_TYPE_OPTIONS = [
     label: TRANSACTION_TYPE_LABELS[TransactionType.DEPOSIT],
   },
   {
-    value: TransactionType.INVESTIMENT,
-    label: TRANSACTION_TYPE_LABELS[TransactionType.INVESTIMENT],
+    value: TransactionType.INVESTMENT,
+    label: TRANSACTION_TYPE_LABELS[TransactionType.INVESTMENT],
   },
 ];
 
-export const PAYMENT_METHOD_OPTIONS = [
+export const TRANSACTION_PAYMENT_METHOD_OPTIONS = [
   {
     value: TransactionPaymentMethod.CREDIT_CARD,
     label:

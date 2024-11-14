@@ -23,13 +23,12 @@ model Transaction {
   date          DateTime
   createdAt     DateTime                 @default(now())
   updatedAt     DateTime                 @updatedAt
-  userId        String
 }
 
 enum TransactionType {
   DEPOSIT
   EXPENSE
-  INVESTIMENT
+  INVESTMENT
 }
 
 enum TransactionCategory {
