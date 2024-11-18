@@ -11,6 +11,9 @@ Framework e bibliotecas front-end
 - [NextJS](https://nextjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Shadcn/UI](https://ui.shadcn.com/)
+
+Autenticação
+
 - [ClerkAuth](https://clerk.com/)
 
 Formulários
