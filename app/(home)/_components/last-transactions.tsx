@@ -11,7 +11,7 @@ interface LastTransacionsProps {
   lastTransactions: Transaction[];
 }
 
-export default function LastTransacions({
+export default function LastTransactions({
   lastTransactions,
 }: LastTransacionsProps) {
   const getAmountColor = (transaction: Transaction) => {
