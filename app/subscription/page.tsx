@@ -7,7 +7,7 @@ import AcquirePlanButton from "./_components/acquire-plan-button";
 import { Badge } from "../_components/ui/badge";
 import { getCurrentMonthTransactions } from "../_data/get-current-month-transactions";
 
-export default async function SubscriptionPage() {
+const SubscriptionPage = async () => {
   const { userId } = await auth();
   if (!userId) {
     redirect("/login");
@@ -79,4 +79,6 @@ export default async function SubscriptionPage() {
       </div>
     </>
   );
-}
+};
+
+export default SubscriptionPage;

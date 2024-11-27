@@ -1,4 +1,3 @@
-import { deleteTransaction } from "@/app/_actions/delete-transaction";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -12,15 +11,16 @@ import {
 } from "@/app/_components/ui/alert-dialog";
 import { Button } from "@/app/_components/ui/button";
 import { TrashIcon } from "lucide-react";
+import { deleteTransaction } from "../_actions/delete-transaction";
 import { toast } from "sonner";
 
 interface DeleteTransactionButtonProps {
   transactionId: string;
 }
 
-export default function DeleteTransactionButton({
+const DeleteTransactionButton = ({
   transactionId,
-}: DeleteTransactionButtonProps) {
+}: DeleteTransactionButtonProps) => {
   const handleConfirmDeleteClick = async () => {
     try {
       await deleteTransaction({ transactionId });
@@ -55,4 +55,6 @@ export default function DeleteTransactionButton({
       </AlertDialogContent>
     </AlertDialog>
   );
-}
+};
+
+export default DeleteTransactionButton;

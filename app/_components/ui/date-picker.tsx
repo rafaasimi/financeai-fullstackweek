@@ -1,8 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { Calendar as CalendarIcon } from "lucide-react";
 import { ptBR } from "date-fns/locale";
+import { Calendar as CalendarIcon } from "lucide-react";
+
 import { cn } from "@/app/_lib/utils";
 import { Button } from "./button";
 import { Calendar } from "./calendar";
@@ -14,7 +15,7 @@ interface DatePickerProps {
   onChange?: SelectSingleEventHandler;
 }
 
-export default function DatePicker({ value, onChange }: DatePickerProps) {
+export const DatePicker = ({ value, onChange }: DatePickerProps) => {
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -48,4 +49,4 @@ export default function DatePicker({ value, onChange }: DatePickerProps) {
       </PopoverContent>
     </Popover>
   );
-}
+};

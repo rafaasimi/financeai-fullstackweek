@@ -5,17 +5,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Navbar() {
-  const pathName = usePathname();
-
+const Navbar = () => {
+  const pathname = usePathname();
   return (
     <nav className="flex justify-between border-b border-solid px-8 py-4">
+      {/* ESQUERDA */}
       <div className="flex items-center gap-10">
-        <Image src={"/logo.svg"} width={133} height={39} alt="Finance AI" />
+        <Image src="/logo.svg" width={173} height={39} alt="Finance AI" />
         <Link
           href="/"
           className={
-            pathName === "/"
+            pathname === "/"
               ? "font-bold text-primary"
               : "text-muted-foreground"
           }
@@ -25,7 +25,7 @@ export default function Navbar() {
         <Link
           href="/transactions"
           className={
-            pathName === "/transactions"
+            pathname === "/transactions"
               ? "font-bold text-primary"
               : "text-muted-foreground"
           }
@@ -35,7 +35,7 @@ export default function Navbar() {
         <Link
           href="/subscription"
           className={
-            pathName === "/subscription"
+            pathname === "/subscription"
               ? "font-bold text-primary"
               : "text-muted-foreground"
           }
@@ -43,8 +43,10 @@ export default function Navbar() {
           Assinatura
         </Link>
       </div>
-
+      {/* DIREITA */}
       <UserButton showName />
     </nav>
   );
-}
+};
+
+export default Navbar;
