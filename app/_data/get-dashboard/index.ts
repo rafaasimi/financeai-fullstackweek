@@ -5,6 +5,7 @@ import { auth } from "@clerk/nextjs/server";
 
 export default async function getDashboard(month: string) {
   const { userId } = await auth();
+  console.log(userId);
 
   if (!userId) {
     throw new Error("Unauthorized");
@@ -100,6 +101,6 @@ export default async function getDashboard(month: string) {
     expensesTotal,
     typesPercentage,
     totalExpensePerCategory,
-    lastTransactions,
+    lastTransactions: JSON.parse(JSON.stringify(lastTransactions)),
   };
 }
